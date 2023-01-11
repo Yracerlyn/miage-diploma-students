@@ -27,9 +27,10 @@ public class AppTest {
 		fw.write("1,Nicolas,Dr.\n");
 		fw.write("1,Francois,M.\n");
 		fw.close();
-
+		
+		
 		assertEquals(2, Iterables.size(StudentRepository.withDB(tempDB.toString())));
-
+		
 		Student nicolas = Iterables.get(StudentRepository.withDB(tempDB.toString()), 0);
 
 		assertEquals("Nicolas", nicolas.getName());
@@ -41,6 +42,6 @@ public class AppTest {
 		assertEquals("Francois", francois.getName());
 		assertEquals("M.", francois.getTitle());
 		assertEquals(2, francois.getId());
-
+		
 	}
 }
